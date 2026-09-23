@@ -38,35 +38,33 @@
     });
   });
 
-  // Highlight the section currently in view.
-  var linkById = {};
-  tocLinks.forEach(function (link) {
-    linkById[link.getAttribute("href").slice(1)] = link;
-  });
-
-  function setActive(id) {
-    tocLinks.forEach(function (link) {
-      link.classList.remove("is-active");
-    });
-    if (linkById[id]) {
-      linkById[id].classList.add("is-active");
-    }
+  // Highlight the contents entry for the heading at the reading line.
+  // Targets are walked in document order, so a visible subsection wins over
+  // its parent section. Headings deeper than the contents list are ignored.
+  function readingOffset() {
+    var header = document.querySelector(".masthead");
+    return (header ? header.offsetHeight : 60) + 24;
   }
 
-  if ("IntersectionObserver" in window && sections.length) {
-    var observer = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            setActive(entry.target.id);
-          }
-        });
-      },
-      { rootMargin: "-45% 0px -50% 0px", threshold: 0 },
-    );
+  function updateActive() {
+    var line = window.scrollY + readingOffset();
+    var current = null;
     sections.forEach(function (section) {
-      observer.observe(section);
+      var top = section.getBoundingClientRect().top + window.scrollY;
+      if (top <= line) current = section.id;
     });
+    tocLinks.forEach(function (link) {
+      link.classList.toggle(
+        "is-active",
+        current !== null && link.getAttribute("href") === "#" + current,
+      );
+    });
+  }
+
+  if (sections.length) {
+    window.addEventListener("scroll", updateActive, { passive: true });
+    window.addEventListener("resize", updateActive);
+    updateActive();
   }
 
   // Back-to-top visibility and action.

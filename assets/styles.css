@@ -196,6 +196,17 @@ body {
   font-weight: 600;
 }
 
+.toc-list ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.toc-list ol a {
+  padding-left: 28px;
+  font-size: 13px;
+}
+
 /* Content */
 .content {
   padding: 28px 0 64px;
