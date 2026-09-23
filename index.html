@@ -65,7 +65,8 @@
             An internal, read-only reference describing how A&amp;J Studio — a
             corporation to be incorporated under the
             <em>Business Corporations Act</em> (British Columbia, Canada) — is
-            owned, directed, financed, and operated by its two co-founders.
+            owned, financed, and operated by its two co-founders. Albert is the
+            sole director.
           </p>
           <p class="doc-meta">
             Status: <strong>Working draft</strong> · Jurisdiction: British
@@ -91,6 +92,7 @@
             </li>
             <li><span class="field-label">Entity type</span><span class="field-value">Limited company (Corporation) under the BC Business Corporations Act</span></li>
             <li><span class="field-label">Co-founders</span><span class="field-value">Albert Zang (legal name Yansong Zang) · Jacob Wang (legal name Yiji Wang)</span></li>
+            <li><span class="field-label">Director</span><span class="field-value">Albert Zang (sole director)</span></li>
             <li><span class="field-label">Head office</span><span class="field-value">Metro Vancouver, British Columbia</span></li>
             <li><span class="field-label">Main business</span><span class="field-value">Custom software and technology solutions for small and micro businesses — including application development, IT consulting, and technical support.</span></li>
             <li><span class="field-label">Incorporation number</span><span class="field-value todo">Pending incorporation</span></li>
@@ -124,41 +126,45 @@
         <section id="founders" class="doc-section">
           <h2>3. Founders &amp; Ownership</h2>
           <p>
-            The company is founded and owned by two co-founders, who are also its
-            directors. Control (voting) and economics (dividends) are
-            deliberately separated.
+            The company is founded and owned by two co-founders. Ordinary control
+            and dividend economics are separate, and each founder has a personal
+            block on major matters.
           </p>
           <table class="data-table">
             <thead>
               <tr>
                 <th>Co-founder</th>
                 <th>Role</th>
-                <th>Voting / control</th>
-                <th>Dividend / economics</th>
+                <th>Ordinary voting</th>
+                <th>Dividends</th>
+                <th>Veto share</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>Albert Zang (legal name Yansong Zang)</td>
-                <td>Co-Founder, Director, CEO &amp; Secretary</td>
-                <td><strong>60%</strong></td>
+                <td>Co-Founder, Sole Director, CEO &amp; Secretary</td>
+                <td><strong>100%</strong> of the voting shares</td>
                 <td>50%</td>
+                <td>Sole owner of his own veto class</td>
               </tr>
               <tr>
                 <td>Jacob Wang (legal name Yiji Wang)</td>
-                <td>Co-Founder, Director, CTO &amp; President</td>
-                <td><strong>40%</strong></td>
+                <td>Co-Founder, CTO &amp; President. Not a director.</td>
+                <td>None</td>
                 <td>50%</td>
+                <td>Sole owner of his own veto class</td>
               </tr>
             </tbody>
           </table>
           <div class="callout info">
             <span class="callout-label">Design intent</span>
             <p>
-              Albert holds a controlling vote for ordinary decisions (60%), while
-              major decisions require a super-majority (see §5). Both founders
-              share the company's profits equally (50/50). This split of control
-              from economics is implemented through separate share classes (§4).
+              Albert alone decides ordinary matters, as the sole director and the
+              only holder of the voting shares. Profits stay 50/50 through the
+              dividend shares. A major matter needs the consent of both veto
+              classes, so neither founder can do it alone and neither can outvote
+              the other. Both veto shares are created at incorporation (§4 and §5).
             </p>
           </div>
         </section>
@@ -166,9 +172,10 @@
         <section id="shares" class="doc-section">
           <h2>4. Share Structure</h2>
           <p>
-            To separate decision-making rights from dividend rights, the company
-            uses <strong>two classes of shares</strong>. This is a draft design
-            to be finalized in the Articles with a lawyer.
+            The company uses <strong>four share classes</strong>. Ordinary voting,
+            dividends, and the two personal vetoes are kept apart so that a right
+            given to one founder is not a right the other can exercise. This is a
+            draft to be finalized in the Articles with a lawyer.
           </p>
           <table class="data-table">
             <thead>
@@ -183,36 +190,51 @@
             <tbody>
               <tr>
                 <td><strong>Class A — Voting</strong></td>
-                <td>Voting; non-participating (no/nominal dividend)</td>
-                <td>60 votes</td>
-                <td>40 votes</td>
-                <td>Control (60/40)</td>
+                <td>Votes on ordinary shareholder matters. No dividend, or only a nominal dividend.</td>
+                <td>100%</td>
+                <td>None</td>
+                <td>Albert alone passes ordinary shareholder resolutions</td>
               </tr>
               <tr>
                 <td><strong>Class B — Dividend</strong></td>
-                <td>Non-voting; entitled to dividends and return of capital</td>
+                <td>No ordinary vote. Entitled to dividends and return of capital.</td>
                 <td>50%</td>
                 <td>50%</td>
                 <td>Economics (50/50)</td>
+              </tr>
+              <tr>
+                <td><strong>Class C — Albert's veto</strong></td>
+                <td>No ordinary vote and no dividend. The company must not do a major matter, or change this veto, without this class's consent.</td>
+                <td>Sole owner (one share)</td>
+                <td>None</td>
+                <td>Albert's personal block on major matters</td>
+              </tr>
+              <tr>
+                <td><strong>Class D — Jacob's veto</strong></td>
+                <td>Same veto right as Class C, in a separate class. No ordinary vote and no dividend.</td>
+                <td>None</td>
+                <td>Sole owner (one share)</td>
+                <td>Jacob's personal block on major matters</td>
               </tr>
             </tbody>
           </table>
           <div class="callout ok">
             <span class="callout-label">BCA — Supported</span>
             <p>
-              The BCA does not use fixed "common/preferred" categories; instead,
-              each share carries the <em>special rights or restrictions</em> set
-              in the Articles, which may relate to voting, dividends, and return
-              of capital (BCA ss.&nbsp;59–60 and the definition of "special rights
-              or restrictions"). Multiple classes with different voting and
-              dividend rights are therefore permitted.
+              The BCA does not use fixed "common/preferred" categories. Each share
+              carries the <em>special rights or restrictions</em> set in the
+              Articles, which may relate to voting, dividends, and return of
+              capital (ss.&nbsp;59–60). Separate classes for ordinary votes,
+              dividends, and vetoes are therefore permitted.
             </p>
             <p>
-              Constraint: within a single class, every share must carry the same
-              rights (s.&nbsp;59(4)). That is why the 60/40 control and 50/50
-              economics are achieved with <em>two</em> classes rather than one.
-              Once shares are issued, changing a class's rights needs a special
-              separate resolution of that class (s.&nbsp;61).
+              Within a single class, every share must carry the same rights
+              (s.&nbsp;59(4)). Albert's veto and Jacob's veto are different classes
+              so that one founder cannot vote the other's veto. Changing a class's
+              rights needs a special separate resolution of that class (s.&nbsp;61).
+              Both veto shares are issued at incorporation. Creating, cancelling, or
+              changing a veto class later is a major matter and needs the consent of
+              both existing veto classes (§6).
             </p>
           </div>
           <p class="note">Draft — confirm class terms, amounts, and paid-up capital with a lawyer/CPA.</p>
@@ -220,54 +242,106 @@
 
         <section id="voting" class="doc-section">
           <h2>5. Decision-Making &amp; Voting</h2>
-          <p>Two decision thresholds apply at the shareholder level:</p>
+          <p>Three different records cover three different kinds of decision. The same person may sign more than one of them. The minute book should name which one it is.</p>
           <ul class="fields">
-            <li><span class="field-label">Non-major matters</span><span class="field-value">Ordinary resolution — simple majority (&gt; 50% of votes cast). Albert's 60% can carry these alone.</span></li>
-            <li><span class="field-label">Major matters</span><span class="field-value">Super-majority — at least 75% of votes cast (see the draft list in §6).</span></li>
-            <li><span class="field-label">Dividends</span><span class="field-value">Paid on Class B, split 50/50 (see §8).</span></li>
+            <li><span class="field-label">Ordinary matters</span><span class="field-value">Albert alone, as sole director. If the Act requires a shareholder resolution, he also passes it alone because he owns 100% of the Class A voting shares. Jacob's agreement is not required.</span></li>
+            <li><span class="field-label">Major matters</span><span class="field-value">Written consent of both veto classes, Class C and Class D (see §6). Albert's Class A votes cannot replace Jacob's consent, and Jacob cannot replace Albert's.</span></li>
+            <li><span class="field-label">Dividends</span><span class="field-value">Declaring a dividend is a major matter. Once declared, Class B is paid 50/50 (see §8).</span></li>
           </ul>
-          <div class="callout ok">
-            <span class="callout-label">BCA — Supported (with articles set to 3/4)</span>
-            <p>
-              Under the BCA, the "special majority" needed for a special
-              resolution may be set in the Articles at <strong>no less than 2/3
-              and no more than 3/4</strong> of votes cast (default 2/3). A
-              <strong>75% (3/4)</strong> threshold is therefore the maximum
-              allowed and can be entrenched in the Articles for major matters.
-              Ordinary matters pass by simple majority (&gt; 50%).
-            </p>
-          </div>
+
+          <h3>Board meetings</h3>
+          <p>
+            A board meeting is a meeting of the <strong>directors</strong>. The
+            directors manage the company, or supervise that management (BCA
+            s.&nbsp;136). They appoint officers and set their duties (s.&nbsp;141).
+            Ordinary business is decided here: client work, delivery, spending
+            inside the ordinary course, and the other items that are not on the
+            major-matter list.
+          </p>
+          <p>
+            This company has one director, Albert. Under s.&nbsp;140(4), the sole
+            director may constitute a board meeting by himself. He may also sign a
+            written directors' resolution instead of holding a meeting
+            (s.&nbsp;140(3)). There is no second director and no tie to break.
+          </p>
+          <p>
+            Jacob does not attend as a director and has no vote at a board
+            meeting. His President and CTO work is officer work done under the
+            board's authority (§7). It is not a board vote.
+          </p>
+
+          <h3>Shareholder meetings</h3>
+          <p>
+            A shareholder meeting is a meeting of the <strong>owners of shares
+            that are allowed to vote on that matter</strong>. Shareholders do not
+            manage the day-to-day business. They decide items the Act or the
+            Articles reserve to them, and they elect the director. The company
+            holds an annual general meeting unless the voting shareholders waive
+            it (s.&nbsp;182, and §8).
+          </p>
+          <p>
+            On an ordinary shareholder matter, only Class A votes. Albert owns
+            every Class A share, so he alone can pass the resolution. Jacob's
+            dividend shares and his veto share do not vote. His absence cannot
+            stop the meeting, and his disagreement is not a vote on that
+            resolution.
+          </p>
+          <p>
+            Albert is often the only person involved in both a board decision and
+            a shareholder decision. They are still different acts. A directors'
+            resolution is him acting as director. A Class A shareholder resolution
+            is him acting as the holder of the voting shares. Each one is written
+            down separately.
+          </p>
+
+          <h3>Veto consents</h3>
+          <p>
+            A major matter is not a board vote and not a Class A vote. The
+            Articles provide that the company must not do it unless
+            <strong>both</strong> veto classes consent in writing. Class C is
+            Albert's consent. Class D is Jacob's consent. Each class has one
+            holder, so one signature is that class's consent, and the other
+            person's signature cannot replace it.
+          </p>
+          <p>
+            This is why the vetoes are separate classes. Shares inside one class
+            must have the same rights (s.&nbsp;59(4)). If both founders held veto
+            shares of a single class, a class meeting could count only the votes
+            cast there, and one founder might be able to pass it without the
+            other. Separate classes mean each consent stands on its own.
+          </p>
           <div class="callout warn">
-            <span class="callout-label">Attention — practical effect &amp; board vs shareholders</span>
+            <span class="callout-label">Attention — have the lawyer entrench both vetoes</span>
             <p>
-              With a 60/40 split, neither founder reaches 75% alone, so
-              <strong>major matters effectively require both founders' consent</strong>
-              (functionally unanimous). Ordinary matters (&gt; 50%) can be carried
-              by Albert alone.
+              The Articles need to say that the sole director cannot do a listed
+              major matter without both veto consents. Section 137 allows the
+              Articles to move particular director powers. Section 61 protects a
+              class when its own rights are changed. The drafting has to close the
+              path on which one founder amends the Articles, or holds a meeting the
+              other skips, and thereby drops the other founder's veto. Both veto
+              classes are issued on the day of incorporation so that neither
+              consent is something the other founder can withhold later.
             </p>
             <p>
-              These weighted thresholds work at the <strong>shareholder</strong>
-              level (votes attached to shares). At the two-person
-              <strong>board</strong>, the BCA gives each director one vote, so the
-              board can deadlock and cannot simply be "weighted" 60/40. Reserve
-              major/non-major decisions to shareholder resolutions, tailor the
-              Articles, and put a deadlock-breaking mechanism in a shareholders'
-              agreement. Note: unlike the federal CBCA, the BC BCA has no
-              statutory "unanimous shareholders' agreement" that strips directors
-              of their duties — use a contractual shareholders' agreement plus
-              tailored Articles.
+              A shareholders' agreement can repeat the list and set the remedy if
+              someone ignores it. British Columbia has no federal-style unanimous
+              shareholders' agreement that removes directors' duties. Albert, as
+              director, still has to act honestly and in the company's interests,
+              with reasonable care (s.&nbsp;142).
             </p>
           </div>
+          <p class="note">Informational only — not legal advice. A BC corporate lawyer should draft the Articles before incorporation.</p>
         </section>
 
         <section id="major-matters" class="doc-section">
           <h2>6. Major Corporate Matters — Draft List</h2>
           <p>
-            The following is a suggested draft list of "major matters" that would
-            require the <strong>≥ 75%</strong> threshold. It follows common
-            practice and is provided for the founders to review, adjust, and
-            confirm. Everything not on this list is treated as a non-major matter
-            (ordinary resolution, &gt; 50%).
+            The following is a suggested draft list of major matters. Each one
+            needs the written consent of <strong>both veto classes</strong>
+            (Albert's Class C and Jacob's Class D). The board does not decide
+            these items, and Albert's Class A voting shares do not replace either
+            consent. Everything not on this list is an ordinary matter, which
+            Albert decides alone (§5).
           </p>
           <ul class="checklist">
             <li>Amending the Notice of Articles or Articles</li>
@@ -295,15 +369,16 @@
         <section id="directors" class="doc-section">
           <h2>7. Directors &amp; Officers</h2>
           <p>
-            Both co-founders are the initial directors and together form the
-            board. The officer titles below are management roles. They do not
-            change board control: each director has one vote. Signing authority
-            is still to be decided.
+            Albert is the sole director. Jacob is not a director. The officer
+            titles below are management roles. They do not add a board vote, and
+            they do not replace either veto share. Signing authority is still to
+            be decided.
           </p>
           <ul class="fields">
-            <li><span class="field-label">Directors</span><span class="field-value">Albert Zang (legal name Yansong Zang) · Jacob Wang (legal name Yiji Wang)</span></li>
+            <li><span class="field-label">Director</span><span class="field-value">Albert Zang (legal name Yansong Zang), sole director</span></li>
             <li><span class="field-label">Officers</span><span class="field-value">Albert Zang — CEO &amp; Secretary · Jacob Wang — CTO &amp; President</span></li>
-            <li><span class="field-label">Board decisions</span><span class="field-value">One vote per director; use the shareholders' agreement for deadlock resolution</span></li>
+            <li><span class="field-label">Board decisions</span><span class="field-value">Albert decides ordinary matters alone. There is no second director vote.</span></li>
+            <li><span class="field-label">Chair of the board</span><span class="field-value">No separate Chair is appointed. Albert, as the only director, conducts board business. Jacob is not Chair.</span></li>
             <li><span class="field-label">Signing authority</span><span class="field-value todo">To be decided</span></li>
           </ul>
           <h3>Officer duties</h3>
@@ -319,7 +394,7 @@
               <tr>
                 <td>Albert Zang (legal name Yansong Zang)</td>
                 <td>CEO</td>
-                <td>Strategy and vision; major and external decisions; ultimate accountability.</td>
+                <td>Strategy and vision; external relationships; ultimate accountability for ordinary management. Listed major matters still need both veto consents (§6).</td>
               </tr>
               <tr>
                 <td>Albert Zang (legal name Yansong Zang)</td>
@@ -334,20 +409,68 @@
               <tr>
                 <td>Jacob Wang (legal name Yiji Wang)</td>
                 <td>President</td>
-                <td>Day-to-day operations; delivery; internal management.</td>
+                <td>Day-to-day operations; delivery; internal management. This is an officer role, not a board seat and not Chair of the board.</td>
               </tr>
             </tbody>
           </table>
-          <p class="note">Titles are management roles, not board control (one vote per director). Signing authority is to be decided. Informational only — not legal advice.</p>
+          <h3>Which titles belong to the board</h3>
+          <p>
+            Jacob's titles are not director titles. Under BCA s.&nbsp;141, the
+            director appoints the officers and sets their duties. Unless the
+            Articles say otherwise, any individual may hold an office, and one
+            person may hold more than one office. The standard Table 1 articles
+            say the same thing in another way: the president, the secretary, and
+            any other officer need not be a director.
+          </p>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>What it is</th>
+                <th>This company</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Chair of the board</td>
+                <td>The director who conducts board meetings. This is a board function. The Act does not require a separate Chair appointment.</td>
+                <td>Not used. With one director, Albert conducts board business. Jacob is not Chair, so his President title does not compete with a Chair.</td>
+              </tr>
+              <tr>
+                <td>President</td>
+                <td>An officer. Not required to be a director. In the model articles, the president chairs a board meeting only when that president is a director.</td>
+                <td>Jacob. He runs day-to-day operations. He does not chair the board and does not become a director by holding the title.</td>
+              </tr>
+              <tr>
+                <td>Secretary</td>
+                <td>An officer responsible for the minute book, registers, notices, and filings. Not required to be a director.</td>
+                <td>Albert. Holding Secretary as well as CEO is permitted. It is not a second board vote.</td>
+              </tr>
+              <tr>
+                <td>Treasurer</td>
+                <td>An optional officer. The Act does not require one, and the office does not have to be held by a director.</td>
+                <td>Not created. Adding one later would not conflict with President. Appointing an officer can be a major matter if it stays on the §6 list.</td>
+              </tr>
+              <tr>
+                <td>CEO and CTO</td>
+                <td>Officer titles the board creates. They are not offices the Act assigns to directors.</td>
+                <td>Albert is CEO. Jacob is CTO. Neither title is a board seat.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="note">Signing authority is still to be decided. Informational only — not legal advice.</p>
           <div class="callout ok">
             <span class="callout-label">BCA — Supported</span>
             <p>
               A BC company needs at least one director (s.&nbsp;120), and
               <strong>BC imposes no residency or citizenship requirement</strong>
-              on directors (s.&nbsp;124) — both founders can serve. Directors must
-              be individuals aged 18+, capable of managing their own affairs, and
-              not disqualified (e.g., certain fraud convictions or undischarged
-              bankruptcy). Directors owe fiduciary and care duties to the company.
+              on directors (s.&nbsp;124). Albert can be the sole director. A
+              director must be an individual aged 18 or over, capable of managing
+              their own affairs, and not disqualified (for example, certain fraud
+              convictions or an undischarged bankruptcy). Directors, and officers
+              when acting as officers, owe duties of honesty, loyalty, and care to
+              the company (s.&nbsp;142). Jacob can be President and CTO without
+              being a director (s.&nbsp;141).
             </p>
           </div>
         </section>
@@ -355,14 +478,17 @@
         <section id="profit" class="doc-section">
           <h2>8. Meetings, Profit &amp; Dividends</h2>
           <p>
-            Each year the company holds an Annual General Meeting (AGM), at which
-            the shareholders decide how to use the year's net profit — the amount
-            left after operating, infrastructure, labour, and all other costs.
+            Each year the company holds an Annual General Meeting unless every
+            Class A voting shareholder waives it (BCA s.&nbsp;182). Albert owns
+            all of those shares, so he can hold the meeting alone or sign the
+            waiver. The meeting is for the business the Act puts to voting
+            shareholders, such as the annual financial statements and election of
+            the director. It is not a board meeting, and Jacob does not vote at it.
           </p>
           <h3>Annual allocation of net profit</h3>
           <ul class="checklist">
-            <li><strong>Company development reserve</strong> — set aside an amount each year to buffer future uncertainty and growth</li>
-            <li><strong>Dividends</strong> — distribute the remainder per the dividend ratio (Class B, 50/50)</li>
+            <li><strong>Company development reserve</strong> — setting the reserve is a major matter, so both veto classes must consent (§6)</li>
+            <li><strong>Dividends</strong> — declaring a dividend is a major matter. Once declared, Class B is paid 50/50</li>
           </ul>
           <div class="callout warn">
             <span class="callout-label">Attention — solvency test on dividends</span>
@@ -372,7 +498,9 @@
               to pay debts as they come due) or that the dividend would render it
               insolvent; it also needs sufficient retained earnings. Directors who
               approve an offside dividend can be personally liable. Dividends must
-              follow class rights — equal within Class B, i.e., 50/50.
+              follow class rights — equal within Class B, i.e., 50/50. Declaring
+              the dividend is a major matter, so both veto classes consent before
+              it is paid (§6).
             </p>
           </div>
           <p class="subtle-ref">
@@ -388,9 +516,9 @@
             <li><span class="field-label">Founder capital</span><span class="field-value">Albert $1,500 CAD · Jacob $1,500 CAD (equal)</span></li>
           </ul>
           <p>
-            Equal capital ($1,500 each) with unequal voting (60/40) is a
-            deliberate, acceptable design — voting comes from the Class A
-            allocation, not from the dollar amount contributed.
+            Equal capital ($1,500 each) does not set control. Albert's ordinary
+            vote comes from owning all of the Class A shares. The equal dollars
+            are recorded as the capital contribution, not as a 50/50 vote.
           </p>
           <h3>Ways to structure the injection (draft options)</h3>
           <table class="data-table">
@@ -559,56 +687,50 @@ Signed:
             </thead>
             <tbody>
               <tr>
-                <td>Separate voting vs dividend rights via share classes</td>
-                <td>Permitted — special rights/restrictions may cover voting and dividends (ss.&nbsp;59–60)</td>
+                <td>Separate ordinary votes, dividends, and two vetoes</td>
+                <td>Permitted — special rights/restrictions may cover voting and dividends (ss.&nbsp;59–60). Rights must be equal inside one class (s.&nbsp;59(4)), so the two vetoes are two classes.</td>
                 <td><span class="status-ok">OK</span></td>
-                <td>Draft two-class Articles (Class A voting, Class B dividend) with a lawyer.</td>
+                <td>Draft four-class Articles (Class A voting, Class B dividend, Class C Albert veto, Class D Jacob veto) with a lawyer.</td>
               </tr>
               <tr>
-                <td>60/40 voting control</td>
-                <td>Permitted — allocate Class A voting shares 60/40</td>
+                <td>Albert owns 100% of the voting shares</td>
+                <td>Permitted — allocate every Class A share to Albert</td>
                 <td><span class="status-ok">OK</span></td>
-                <td>Record allotments in the securities register.</td>
+                <td>Record the allotment in the securities register. He alone passes ordinary shareholder resolutions.</td>
               </tr>
               <tr>
                 <td>50/50 dividends / economics</td>
                 <td>Permitted — equal Class B shares; declare dividends on Class B</td>
                 <td><span class="status-ok">OK</span></td>
-                <td>Subject to the solvency test (below).</td>
+                <td>Declaration is a major matter (both vetoes) and must pass the solvency test.</td>
               </tr>
               <tr>
-                <td>75% for major matters</td>
-                <td>Permitted — the "special majority" in the Articles may be set from 2/3 up to 3/4 of votes cast; 75% is the maximum</td>
-                <td><span class="status-ok">OK</span></td>
-                <td>Entrench 3/4 in the Articles. Note: with 60/40 this is effectively unanimity.</td>
-              </tr>
-              <tr>
-                <td>&gt;50% for non-major matters</td>
-                <td>Ordinary resolution (default simple majority)</td>
-                <td><span class="status-ok">OK</span></td>
-                <td>No special action needed.</td>
-              </tr>
-              <tr>
-                <td>Weighted control at the board</td>
-                <td>Board is one-vote-per-director; cannot be weighted 60/40</td>
+                <td>Both veto consents for major matters</td>
+                <td>A percentage vote cannot reliably mean "both people agree." Separate classes, each with one holder, can require that holder's own consent. Changing a class's rights needs that class's special separate resolution (s.&nbsp;61). Particular director powers can be limited or transferred in the Articles (ss.&nbsp;136–137).</td>
                 <td><span class="status-warn">Attention</span></td>
-                <td>Apply thresholds via shareholder resolutions + a contractual shareholders' agreement (BC has no statutory USA); add a deadlock mechanism.</td>
+                <td>Have a lawyer entrench both vetoes on incorporation so one founder cannot amend them away, or pass a major matter at a meeting the other skips.</td>
               </tr>
               <tr>
-                <td>Both founders as directors</td>
-                <td>≥1 director required (s.&nbsp;120); no residency requirement (s.&nbsp;124)</td>
+                <td>Ordinary matters decided by Albert alone</td>
+                <td>One director may constitute a board meeting (s.&nbsp;140(4)). He owns every ordinary voting share.</td>
                 <td><span class="status-ok">OK</span></td>
-                <td>Both qualify as individuals 18+ and not disqualified.</td>
+                <td>Record ordinary management as directors' resolutions. Do not send those items to a shareholder vote.</td>
               </tr>
               <tr>
-                <td>Profit allocation &amp; dividends at AGM</td>
-                <td>Business decision; dividends must pass the solvency test (s.&nbsp;70)</td>
+                <td>Albert as sole director; Jacob as officer only</td>
+                <td>At least one director is required (s.&nbsp;120). No residency requirement (s.&nbsp;124). An officer need not be a director (s.&nbsp;141).</td>
                 <td><span class="status-ok">OK</span></td>
-                <td>Keep sufficient retained earnings; document the reserve and dividend resolutions.</td>
+                <td>Albert qualifies as an individual 18+ and not disqualified. Jacob holds President and CTO without a board seat.</td>
+              </tr>
+              <tr>
+                <td>Reserve and dividends</td>
+                <td>Business decisions. A dividend must pass the solvency test (s.&nbsp;70). The person who declares it can be personally liable if it does not.</td>
+                <td><span class="status-ok">OK</span></td>
+                <td>Both vetoes consent before a dividend is declared. Albert, as director, still has to apply the solvency test. Pay Class B 50/50.</td>
               </tr>
               <tr>
                 <td>Founder capital $1,500 each</td>
-                <td>Equal capital with unequal voting is fine; injection not revenue (no GST)</td>
+                <td>Equal capital with Albert holding all Class A shares is fine; the injection is not revenue (no GST)</td>
                 <td><span class="status-ok">OK</span></td>
                 <td>Choose equity vs shareholder loan (hybrid recommended); document and set PUC with a CPA.</td>
               </tr>
@@ -631,10 +753,13 @@ Signed:
             <p>
               BC <em>Business Corporations Act</em>, SBC 2002, c.&nbsp;57 —
               definitions ("special majority", "special rights or restrictions"),
-              ss.&nbsp;59–61 (share classes/series and alteration), s.&nbsp;70
-              (dividends/solvency), s.&nbsp;120 (number of directors), s.&nbsp;124
-              (director qualifications; no residency requirement), s.&nbsp;259
-              (2/3–3/4 special majority). Tax points reference the federal Income
+              ss.&nbsp;59–61 (share classes and alteration of class rights), s.&nbsp;70
+              (dividends/solvency), ss.&nbsp;120 and 124 (one director; no residency
+              requirement), ss.&nbsp;136–137 (directors manage, and Articles may
+              transfer particular powers), s.&nbsp;140 (sole director may constitute
+              a meeting; written director consent), s.&nbsp;141 (officers need not
+              be directors), s.&nbsp;142 (duties), and s.&nbsp;182 (annual general
+              meeting). Tax points reference the federal Income
               Tax Act (e.g., s.&nbsp;15). See
               <a class="ext" href="https://www.bclaws.gov.bc.ca/civix/document/id/complete/statreg/02057_01" target="_blank" rel="noopener">bclaws.gov.bc.ca — BCA</a>.
               Informational only; confirm with a BC corporate lawyer and a CPA.
@@ -649,7 +774,7 @@ Signed:
             The fiscal year ends on December 31 (§1).
           </p>
           <ul class="checklist">
-            <li>Minute book: constating documents, resolutions, and minutes</li>
+            <li>Minute book: constating documents, and separate records for directors' resolutions, Class A shareholder resolutions, and Class C and Class D veto consents (§5)</li>
             <li>Central securities register; register of directors; register of transfers</li>
             <li>BC registered &amp; records office (a physical BC address)</li>
             <li>BC Registries annual report (filed each year)</li>
@@ -670,9 +795,9 @@ Signed:
           </p>
           <ul class="checklist">
             <li>Certificate of Incorporation</li>
-            <li>Notice of Articles &amp; Articles (two-class share structure)</li>
+            <li>Notice of Articles &amp; Articles (Class A voting, Class B dividend, Class C and Class D vetoes)</li>
             <li>Incorporation Agreement</li>
-            <li>Shareholders' Agreement (thresholds, deadlock, transfers)</li>
+            <li>Shareholders' Agreement (veto consents, remedies, transfers)</li>
             <li>Share subscription and shareholder-loan agreements</li>
             <li>Founder compensation policy</li>
             <li>Project contract template (§11)</li>
