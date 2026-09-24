@@ -12,7 +12,7 @@
   --todo-bg: #fef3c7;
   --header-h: 60px;
   --sidebar-w: 288px;
-  --maxw: 1260px;
+  --maxw: 1180px;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
     sans-serif;
 }
@@ -210,7 +210,7 @@ body {
 /* Content */
 .content {
   padding: 28px 0 64px;
-  max-width: 880px;
+  max-width: 780px;
 }
 
 .doc-intro {
@@ -451,6 +451,23 @@ body {
 .data-table th {
   background: #f1f5f9;
   font-weight: 600;
+}
+
+.roles-table th,
+.shares-table th,
+.roles-table td:nth-child(-n+2),
+.shares-table td:nth-child(1),
+.shares-table td:nth-child(3) {
+  white-space: nowrap;
+}
+
+.roles-table th:nth-child(-n+2),
+.roles-table td:nth-child(-n+2),
+.shares-table th:nth-child(1),
+.shares-table th:nth-child(3),
+.shares-table td:nth-child(1),
+.shares-table td:nth-child(3) {
+  width: 1%;
 }
 
 .status-ok {
