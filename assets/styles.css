@@ -12,7 +12,7 @@
   --todo-bg: #fef3c7;
   --header-h: 60px;
   --sidebar-w: 288px;
-  --maxw: 1180px;
+  --maxw: 1260px;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
     sans-serif;
 }
@@ -210,7 +210,7 @@ body {
 /* Content */
 .content {
   padding: 28px 0 64px;
-  max-width: 780px;
+  max-width: 880px;
 }
 
 .doc-intro {
