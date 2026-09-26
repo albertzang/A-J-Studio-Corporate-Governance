@@ -597,17 +597,6 @@ p.note {
   color: var(--accent);
 }
 
-/* Disclaimer banner */
-.disclaimer-banner {
-  background: #fffbeb;
-  border: 1px solid #fcd34d;
-  color: #7c2d12;
-  border-radius: 10px;
-  padding: 12px 16px;
-  font-size: 13.5px;
-  margin: 16px 0 0;
-}
-
 /* Responsive */
 @media (max-width: 860px) {
   .nav-toggle {
