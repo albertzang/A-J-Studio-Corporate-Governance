@@ -23,6 +23,18 @@
     navToggle.setAttribute("aria-expanded", open ? "true" : "false");
   }
 
+  // The title links to #top. A second click does not scroll when the
+  // address is already #top, so scroll again in that case.
+  var home = document.querySelector("a.brand");
+  if (home) {
+    home.addEventListener("click", function (event) {
+      if (location.hash === "#top") {
+        event.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    });
+  }
+
   if (navToggle) {
     navToggle.addEventListener("click", function () {
       setSidebar(!sidebar.classList.contains("is-open"));
