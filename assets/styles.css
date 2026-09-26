@@ -252,6 +252,12 @@ body {
   border-bottom: none;
 }
 
+/* The last contents target has to reach the reading line under the masthead.
+   Without this room, the page ends first and that item never becomes active. */
+.doc-section:last-child > .doc-subsection:last-child {
+  min-height: calc(100vh - var(--header-h) - 16px);
+}
+
 .doc-section h2 {
   font-size: 21px;
   margin: 0 0 10px;
@@ -379,6 +385,15 @@ p.note {
   border-radius: 999px;
   cursor: pointer;
   box-shadow: 0 6px 18px rgba(29, 78, 216, 0.35);
+  text-decoration: none;
+}
+
+.back-to-top:link,
+.back-to-top:visited,
+.back-to-top:hover,
+.back-to-top:active {
+  color: #fff;
+  text-decoration: none;
 }
 
 .back-to-top[hidden] {

@@ -23,17 +23,17 @@
     navToggle.setAttribute("aria-expanded", open ? "true" : "false");
   }
 
-  // The title links to #top. A second click does not scroll when the
-  // address is already #top, so scroll again in that case.
-  var home = document.querySelector("a.brand");
-  if (home) {
-    home.addEventListener("click", function (event) {
-      if (location.hash === "#top") {
-        event.preventDefault();
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }
-    });
+  // The title and the Top button both link to #top. A second click does
+  // not scroll when the address is already #top, so scroll again in that case.
+  function goToTop(event) {
+    if (location.hash === "#top") {
+      event.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
   }
+
+  var home = document.querySelector("a.brand");
+  if (home) home.addEventListener("click", goToTop);
 
   if (navToggle) {
     navToggle.addEventListener("click", function () {
@@ -61,9 +61,16 @@
   function updateActive() {
     var line = window.scrollY + readingOffset();
     var current = null;
+    var atEnd =
+      window.innerHeight + window.scrollY >=
+      document.documentElement.scrollHeight - 2;
     sections.forEach(function (section) {
       var top = section.getBoundingClientRect().top + window.scrollY;
-      if (top <= line) current = section.id;
+      // At the bottom of the page the last heading can stay below the
+      // reading line. Count it once it is on screen.
+      if (top <= line || (atEnd && top < window.scrollY + window.innerHeight)) {
+        current = section.id;
+      }
     });
     tocLinks.forEach(function (link) {
       link.classList.toggle(
@@ -86,9 +93,7 @@
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
-    backToTop.addEventListener("click", function () {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
+    backToTop.addEventListener("click", goToTop);
   }
 
   // Keep the footer year current.
