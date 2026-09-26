@@ -52,7 +52,7 @@ body {
 .masthead {
   position: sticky;
   top: 0;
-  z-index: 40;
+  z-index: 50;
   height: var(--header-h);
   display: flex;
   align-items: center;
@@ -256,6 +256,7 @@ body {
    Without this room, the page ends first and that item never becomes active. */
 .doc-section:last-child > .doc-subsection:last-child {
   min-height: calc(100vh - var(--header-h) - 16px);
+  min-height: calc(100dvh - var(--header-h) - 16px);
 }
 
 .doc-section h2 {
@@ -589,6 +590,57 @@ p.note {
     display: flex;
   }
 
+  .nav-backdrop:not([hidden]) {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 44;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    appearance: none;
+    background: rgba(15, 23, 42, 0.45);
+    cursor: pointer;
+    touch-action: none;
+  }
+
+  body.nav-open {
+    overflow: hidden;
+  }
+
+  .layout,
+  .content,
+  .doc-section,
+  .doc-subsection {
+    min-width: 0;
+  }
+
+  .table-scroll {
+    overflow-x: auto;
+    max-width: 100%;
+  }
+
+  .roles-table th,
+  .roles-table td,
+  .roles-table td:nth-child(-n + 2),
+  .shares-table th,
+  .shares-table td,
+  .shares-table td:nth-child(1),
+  .shares-table td:nth-child(3),
+  .shares-table .rights li {
+    white-space: normal;
+  }
+
+  .data-table {
+    table-layout: fixed;
+    width: 100%;
+  }
+
+  .data-table th,
+  .data-table td {
+    overflow-wrap: break-word;
+  }
+
   .layout {
     display: block;
     padding: 0;
@@ -608,6 +660,7 @@ p.note {
     transition: transform 0.22s ease;
     z-index: 45;
     box-shadow: 6px 0 24px rgba(15, 23, 42, 0.12);
+    overscroll-behavior: contain;
   }
 
   .sidebar.is-open {
