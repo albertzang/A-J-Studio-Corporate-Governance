@@ -260,6 +260,8 @@ body {
 
 .doc-section:last-child {
   border-bottom: none;
+  min-height: calc(100vh - var(--header-h) - 16px);
+  min-height: calc(100dvh - var(--header-h) - 16px);
 }
 
 /* The last contents target has to reach the reading line under the masthead.
